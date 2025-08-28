@@ -47,12 +47,12 @@
         <div class="container header-inferior">
             <div class="busca">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="barra-busca" placeholder="Encontre seu medicamento pelo princípio ativo ou nome">
+                <input type="text" id="barra-busca" placeholder="Encontre seu medicamento pelo princípio ativo ou nome" autocomplete="off">
             </div>
         </div>
     </header>
 
-    <div class="swiper">
+    <div class="swiper secao-ocultavel">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="imagens/slide1.webp" alt="Banner sobre a excelência na logística de medicamentos 4BIO"></div>
             <div class="swiper-slide"><img src="imagens/slide2.webp" alt="Banner destacando o atendimento especializado da 4BIO"></div>
@@ -62,7 +62,7 @@
         <div class="swiper-pagination"></div>
     </div>
 
-    <section class="secao-numeros">
+    <section class="secao-numeros secao-ocultavel">
         <div class="container">
             <div class="numero-item">
                 <h2 class="numero-grande">+25.000</h2>
@@ -75,17 +75,17 @@
         </div>
     </section>
 
-    <section class="secao-dna">
+    <section class="secao-dna secao-ocultavel">
         <div class="container">
             <h2 class="titulo-secao">Nosso DNA</h2>
             <p>A 4BIO, empresa que comercializa medicamentos especiais, tem como conceito a excelência na prestação de serviços com dedicação, profissionalismo, tecnologia e qualidade. Para o tratamento ser realmente eficaz, não basta apenas confiar no medicamento prescrito. É preciso segurança sobre as condições de conservação, armazenagem e transporte.</p>
         </div>
     </section>
 
-    <section class="secao-diferenciais">
+    <section class="secao-diferenciais secao-ocultavel">
         <div class="container">
             <h2 class="titulo-secao">Diferenciais 4BIO</h2>
-            <p>Quando o assunto é cuidar da vida, nós da 4BIO estamos ao seu lado para dar a importância que o assunto merece, trabalhando em perfeita união com laboratórios, médicos, pacientes, clínicas, hospitais e operadoras de saúde.</p>
+            <p>Quando o assunto é cuidar da vida, a 4BIO está ao seu lado. Trabalhamos em perfeita união com laboratórios, médicos e pacientes, com entrega garantida para todo o Brasil, além de clínicas, hospitais e operadoras de saúde.</p>
             <div class="card-diferencial">
                 <img src="imagens/icone-pacientes.png" alt="Ícone representando pacientes">
                 <h3>Pacientes</h3>
@@ -94,9 +94,9 @@
         </div>
     </section>
 
-    <section class="secao-navegacao">
+    <section class="secao-navegacao secao-ocultavel">
         <div class="container">
-            <a href="#" class="card-nav">
+            <a href="logistica.html" class="card-nav">
                 <h3>Excelência na Logística</h3>
                 <div class="linha-decorativa-card"></div>
                 <i class="fa-solid fa-chevron-right"></i>
@@ -115,7 +115,7 @@
     </section>
 
     <main class="container">
-        <h1 class="titulo-secao">Nossos Medicamentos</h1>
+        <h1 class="titulo-secao" id="titulo-principal-produtos">Nossos Medicamentos</h1>
         <section id="grid-produtos" class="grid-produtos">
             <div class="card-produto" data-full-name="Amgevita 50Mg/Ml">
                 <img src="imagens/foto-padrao.png" alt="Caixa do medicamento Amgevita 50Mg/Ml">
@@ -325,7 +325,7 @@
         <p id="nenhum-resultado" class="nenhum-resultado" style="display: none;">Nenhum produto encontrado.</p>
     </main>
     
-    <section class="secao-depoimentos">
+    <section class="secao-depoimentos secao-ocultavel">
         <div class="container">
             <h2 class="titulo-secao">Depoimentos</h2>
             <p class="subtitulo-secao">Veja o que pacientes, médicos e parceiros da 4BIO têm a dizer sobre o nosso comprometimento com a saúde e o bem-estar das pessoas.</p>
@@ -352,16 +352,16 @@
         </div>
     </section>
 
-    <section class="secao-atendimento">
+    <section class="secao-atendimento secao-ocultavel">
         <div class="container">
             <h2 class="titulo-secao">Central de Atendimento</h2>
             <div class="contatos-atendimento">
                 <div class="contato-item">
-                    <p class="numero-atendimento">(11) 3579 2999 e (11) 3508 2900</p>
+                    <p class="numero-atendimento">(11) 3459 2599 e (11) 3748 2800</p>
                     <p class="localidade-atendimento">São Paulo</p>
                 </div>
                 <div class="contato-item">
-                    <p class="numero-atendimento">0800 882 4030*</p>
+                    <p class="numero-atendimento">0800 745 5080*</p>
                     <p class="localidade-atendimento">Demais localidades</p>
                     <p class="aviso-atendimento">*Apenas de telefone fixo</p>
                 </div>
@@ -407,7 +407,7 @@
                         <li><a href="#">Laboratórios</a></li>
                     </ul>
                 </div>
-                    <div class="coluna-pre-rodape">
+                <div class="coluna-pre-rodape">
                     <h4>Identificação de Fraudes</h4>
                     <h4>Relatório de Igualdade Salarial</h4>
                         <div class="redes-sociais">
@@ -431,7 +431,7 @@
                     <img src="imagens/logo-vanzolini-iso.png" alt="Selo de certificação ISO 9001 da Vanzolini">
                 </div>
             </div>
-                <p class="copyright">4 BIO MEDICAMENTOS S.A | Todos os Direitos Reservados</p>
+            <p class="copyright">4 BIO MEDICAMENTOS S.A | Todos os Direitos Reservados</p>
         </section>
 
         <div class="rodape-final">
@@ -470,42 +470,65 @@
             },
         });
 
+        // --- Seleção dos Elementos ---
         const barraBusca = document.getElementById('barra-busca');
         const todosOsProdutos = document.querySelectorAll('.card-produto');
+        const secoesOcultaveis = document.querySelectorAll('.secao-ocultavel');
+        const tituloProdutos = document.getElementById('titulo-principal-produtos');
         const mensagemNenhumResultado = document.getElementById('nenhum-resultado');
+        
+        // Variável para o "debounce", para não filtrar a cada tecla e sim quando o usuário para de digitar
+        let debounceTimer;
 
-        barraBusca.addEventListener('keyup', function() {
-            const termoBusca = this.value.toLowerCase().trim();
-            let encontrouProduto = false;
+        // --- Lógica Principal da Busca ---
+        barraBusca.addEventListener('keyup', () => {
+            clearTimeout(debounceTimer);
 
-            if (termoBusca === '') {
-                todosOsProdutos.forEach(produto => {
-                    if (produto.classList.contains('produto-oculto')) {
-                        produto.style.display = 'none';
+            debounceTimer = setTimeout(() => {
+                const termoBusca = barraBusca.value.toLowerCase().trim();
+
+                // Se a busca tiver algo digitado
+                if (termoBusca.length > 0) {
+                    // Esconde as seções da página inicial
+                    secoesOcultaveis.forEach(secao => secao.classList.add('escondido'));
+                    tituloProdutos.innerText = 'Resultados da Busca';
+
+                    let encontrouProduto = false;
+
+                    // Filtra os produtos visíveis
+                    todosOsProdutos.forEach(produto => {
+                        const nomeCompleto = produto.dataset.fullName.toLowerCase();
+                        if (nomeCompleto.includes(termoBusca)) {
+                            produto.style.display = 'flex';
+                            encontrouProduto = true;
+                        } else {
+                            produto.style.display = 'none';
+                        }
+                    });
+                    
+                    // Mostra ou esconde a mensagem de "nenhum resultado"
+                    if (encontrouProduto) {
+                        mensagemNenhumResultado.style.display = 'none';
                     } else {
-                        produto.style.display = 'flex';
+                        mensagemNenhumResultado.style.display = 'block';
                     }
-                });
-                mensagemNenhumResultado.style.display = 'none';
-                return;
-            }
 
-            todosOsProdutos.forEach(function(produto) {
-                const nomeCompleto = produto.dataset.fullName.toLowerCase();
-                
-                if (nomeCompleto.includes(termoBusca)) {
-                    produto.style.display = 'flex';
-                    encontrouProduto = true;
                 } else {
-                    produto.style.display = 'none';
-                }
-            });
+                    // Se a busca estiver vazia, restaura a página inicial
+                    secoesOcultaveis.forEach(secao => secao.classList.remove('escondido'));
+                    tituloProdutos.innerText = 'Nossos Medicamentos';
+                    mensagemNenhumResultado.style.display = 'none';
 
-            if (encontrouProduto) {
-                mensagemNenhumResultado.style.display = 'none';
-            } else {
-                mensagemNenhumResultado.style.display = 'block';
-            }
+                    // Restaura a visibilidade dos produtos originais
+                    todosOsProdutos.forEach(produto => {
+                        if (produto.classList.contains('produto-oculto')) {
+                            produto.style.display = 'none';
+                        } else {
+                            produto.style.display = 'flex';
+                        }
+                    });
+                }
+            }, 300); // Espera 300ms após o usuário parar de digitar para executar a busca
         });
     </script>
 </body>
