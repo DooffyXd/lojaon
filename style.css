@@ -1,0 +1,478 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+/* --- ESTILOS GERAIS --- */
+:root {
+    --verde-principal: #3a7d44;
+    --verde-escuro: #2a5a32;
+    --verde-claro: #9dca3a;
+    --cinza-claro: #f4f4f4;
+    --texto: #333;
+    --texto-claro: #888;
+    --amarelo-botao: #f2a900;
+    --amarelo-hover: #d99800;
+    --verde-rodape: #d7eecd;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    font-family: 'Montserrat', sans-serif; 
+    color: var(--texto); 
+    background-color: #FFF; 
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.titulo-secao {
+    font-size: 2.5rem;
+    color: var(--verde-principal);
+    font-weight: 900;
+    text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+.titulo-secao::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 60px;
+    background-color: var(--verde-claro);
+}
+
+
+/* --- CABEÇALHO --- */
+.cabecalho { background-color: #FFF; padding: 15px 0; border-bottom: 1px solid #e0e0e0; }
+.header-superior { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+.logo { max-height: 55px; margin-right: 20px; }
+.header-icons { display: flex; justify-content: flex-end; align-items: center; gap: 20px; flex-grow: 1; }
+.icon-item { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: var(--texto); gap: 5px; }
+.icon-item i { font-size: 1.5rem; color: var(--verde-principal); }
+.icon-item span { font-size: 0.8rem; }
+.busca { position: relative; width: 100%; }
+.busca .fa-magnifying-glass { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: #aaa; }
+.busca input { width: 100%; padding: 12px 12px 12px 40px; border: 1px solid var(--verde-principal); border-radius: 5px; font-size: 1rem; }
+
+/* --- SLIDER / CAROUSEL --- */
+.swiper {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 21 / 6;
+    margin-bottom: 40px;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.swiper-pagination-bullet-active {
+    background-color: var(--verde-principal);
+}
+
+/* --- SEÇÃO NÚMEROS --- */
+.secao-numeros {
+    padding: 60px 0;
+    border-bottom: 1px solid #eee;
+}
+.secao-numeros .container {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.numero-item {
+    padding: 0 20px;
+}
+.numero-grande {
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--verde-claro);
+}
+
+/* --- SEÇÃO DNA E DIFERENCIAIS (TEXTO) --- */
+.secao-dna, .secao-diferenciais {
+    padding: 60px 0;
+    text-align: center;
+}
+.secao-dna p, .secao-diferenciais p {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+.secao-diferenciais {
+    background-color: #f9f9f9;
+}
+.secao-diferenciais p {
+    margin-bottom: 40px;
+}
+.card-diferencial {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    max-width: 400px;
+    margin: 0 auto;
+}
+.card-diferencial img {
+    max-height: 50px;
+    margin-bottom: 15px;
+}
+.card-diferencial h3 {
+    color: var(--verde-principal);
+    margin-bottom: 10px;
+}
+
+/* --- SEÇÃO NAVEGAÇÃO --- */
+.secao-navegacao .container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 60px 20px;
+}
+.card-nav {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-top: 5px solid var(--verde-claro);
+    padding: 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--texto);
+    flex: 1;
+    max-width: 350px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+}
+.card-nav:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+.card-nav h3 {
+    font-size: 1.5rem;
+    color: var(--verde-principal);
+}
+.linha-decorativa-card {
+    height: 2px;
+    width: 40px;
+    background-color: var(--verde-claro);
+    margin: 10px 0;
+}
+.card-nav i {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    color: var(--verde-claro);
+    font-size: 1.5rem;
+}
+
+/* --- VITRINE DE PRODUTOS --- */
+main .titulo-secao { margin-top: 60px; }
+.grid-produtos { padding-top: 25px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.card-produto { 
+    background-color: #fff; 
+    border: 1px solid #e0e0e0; 
+    border-radius: 8px; 
+    padding: 20px; 
+    text-align: center; 
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column; 
+}
+.card-produto:hover { transform: translateY(-5px); box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+.card-produto img { max-width: 100%; height: 180px; object-fit: contain; margin-bottom: 15px; }
+.card-produto h3 { font-size: 1.1rem; margin-bottom: 10px; font-weight: 700; height: auto; }
+.card-produto .preco { font-size: 1.8rem; font-weight: bold; color: var(--verde-principal); margin-bottom: 20px; }
+.btn-comprar { 
+    display: block; 
+    width: 100%; 
+    background-color: var(--amarelo-botao); 
+    color: #fff; 
+    padding: 15px; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 1.1rem; 
+    font-weight: bold; 
+    text-decoration: none; 
+    cursor: pointer; 
+    transition: background-color 0.2s;
+    margin-top: auto;
+}
+.btn-comprar:hover { background-color: var(--amarelo-hover); }
+
+.nenhum-resultado { text-align: center; font-size: 1.5rem; padding: 50px; color: #888; }
+
+/* --- SEÇÃO DEPOIMENTOS --- */
+.secao-depoimentos {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+.subtitulo-secao {
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+    line-height: 1.8;
+}
+.grid-depoimentos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.card-depoimento {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+.texto-depoimento {
+    font-style: italic;
+    color: var(--texto-claro);
+    margin-bottom: 20px;
+}
+.avatar-depoimento {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.nome-depoimento {
+    color: var(--verde-principal);
+}
+.local-depoimento {
+    font-size: 0.9rem;
+    color: var(--texto-claro);
+}
+
+/* --- SEÇÃO ATENDIMENTO --- */
+.secao-atendimento {
+    padding: 60px 0;
+}
+.contatos-atendimento {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+.contato-item {
+    border-left: 3px solid var(--verde-claro);
+    padding-left: 20px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+.numero-atendimento {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--verde-principal);
+}
+.localidade-atendimento {
+    font-size: 1.2rem;
+    color: var(--texto-claro);
+}
+.aviso-atendimento {
+    font-size: 0.8rem;
+    color: var(--texto-claro);
+}
+.financeiro-atendimento {
+    margin-top: 30px;
+    line-height: 1.6;
+}
+
+/* --- RODAPÉ --- */
+.rodape-geral {
+    border-top: 1px solid #eee;
+}
+.pre-rodape {
+    padding: 60px 0;
+    background-color: #fff;
+}
+.pre-rodape .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+.coluna-pre-rodape h4 {
+    font-size: 1.2rem;
+    color: var(--verde-principal);
+    margin-bottom: 15px;
+}
+.coluna-pre-rodape ul {
+    list-style: none;
+}
+.coluna-pre-rodape ul li a {
+    text-decoration: none;
+    color: var(--texto-claro);
+    line-height: 2;
+    transition: color 0.2s;
+}
+.coluna-pre-rodape ul li a:hover {
+    color: var(--verde-principal);
+}
+.redes-sociais {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+.redes-sociais a {
+    color: var(--verde-principal);
+    font-size: 1.5rem;
+    transition: color 0.2s;
+}
+.redes-sociais a:hover {
+    color: var(--verde-escuro);
+}
+
+.secao-certificacoes {
+    padding: 40px 0;
+    text-align: center;
+}
+.secao-certificacoes .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+.cert-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.cert-item img {
+    max-height: 80px;
+    margin-top: 10px;
+}
+.copyright {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: var(--texto-claro);
+}
+
+.rodape-final {
+    background-color: var(--verde-rodape);
+    color: #4f4f4f;
+    padding: 40px 20px;
+}
+.aviso-legal {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+}
+.metodos-pagamento {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.metodos-pagamento h2 {
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    color: #333;
+}
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.payment-icons img {
+    height: auto;
+    max-width: 280px;
+    width: 100%;
+}
+.desenvolvido-por {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #555;
+}
+.desenvolvido-por .fa-code {
+    font-size: 1.2rem;
+}
+
+
+/* --- WHATSAPP FLUTUANTE --- */
+.whatsapp-flutuante { position: fixed; bottom: 30px; right: 30px; z-index: 1000; }
+.whatsapp-flutuante img { width: 60px; height: 60px; transition: transform 0.2s; }
+.whatsapp-flutuante img:hover { transform: scale(1.1); }
+
+/* --- AJUSTES PARA CELULAR (Responsividade) --- */
+@media (max-width: 768px) {
+    .titulo-secao { font-size: 2rem; }
+    .header-superior { flex-direction: row; flex-wrap: wrap; justify-content: space-between; }
+    .logo { max-height: 40px; }
+    .header-icons { gap: 15px; }
+    .icon-item i { font-size: 1.2rem; }
+    .icon-item span { font-size: 0.7rem; }
+    .header-inferior { margin-top: 15px; }
+
+    .swiper { aspect-ratio: 3 / 1.3; }
+    
+    .secao-numeros .container { flex-direction: column; gap: 40px; }
+    .numero-grande { font-size: 3rem; }
+
+    .secao-navegacao .container { flex-direction: column; }
+
+    .grid-produtos { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; }
+    .card-produto h3 { font-size: 1rem; }
+    .card-produto .preco { font-size: 1.5rem; }
+    
+    .pre-rodape .container { text-align: center; }
+    .redes-sociais { justify-content: center; }
+
+    .aviso-legal { font-size: 0.7rem; }
+    .payment-icons img { max-width: 220px; }
+    .desenvolvido-por { justify-content: center; margin-top: 20px; }
+}
+
+/* --- ESTILOS PARA PÁGINAS DE TEXTO (LGPD, QUEM SOMOS, ETC.) --- */
+.pagina-texto {
+    padding: 60px 0; 
+    background-color: #fff;
+}
+.pagina-texto h1, 
+.pagina-texto h2, 
+.pagina-texto h3 {
+    color: var(--verde-principal);
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+.pagina-texto h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    border-bottom: 2px solid var(--verde-claro);
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+.pagina-texto h2 {
+    font-size: 1.6rem;
+}
+.pagina-texto p {
+    margin-bottom: 20px;
+    line-height: 1.8; 
+    color: #555; 
+}
+.pagina-texto ul {
+    list-style-position: inside;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+.pagina-texto li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+}
+.pagina-texto a {
+    color: var(--verde-escuro);
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.pagina-texto a:hover {
+    text-decoration: underline;
+    color: var(--verde-claro);
+}
