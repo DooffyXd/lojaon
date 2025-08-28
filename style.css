@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display.swap');
 
 /* --- ESTILOS GERAIS --- */
 :root {
@@ -475,4 +475,33 @@ main .titulo-secao { margin-top: 60px; }
 .pagina-texto a:hover {
     text-decoration: underline;
     color: var(--verde-claro);
+}
+
+/* --- ESTILOS PARA PÁGINA DE LOGÍSTICA --- */
+.grid-diferenciais-logistica {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.item-diferencial {
+    padding: 20px;
+}
+
+.item-diferencial i {
+    font-size: 3rem; /* Tamanho do ícone */
+    color: var(--verde-principal); /* Cor do ícone */
+    margin-bottom: 20px;
+}
+
+.item-diferencial h3 {
+    color: var(--verde-escuro);
+    font-size: 1.2rem;
+}
+
+/* --- CLASSE PARA ESCONDER ELEMENTOS (NOVO) --- */
+.escondido {
+    display: none !important;
 }
